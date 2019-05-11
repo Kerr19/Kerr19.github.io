@@ -651,7 +651,7 @@ a.link:hover,.fc-important,.fc-red {
 }
 
 .f-load-img {
-	background: url(http://data.smohan.net/static/img/logo_grey.png) center no-repeat #f1f2f0;
+	background: url(https://data.smohan.net/static/img/logo_grey.png) center no-repeat #f1f2f0;
 	background-size: auto auto
 }
 
@@ -772,7 +772,7 @@ pre .php-var {
 }
 
 @font-face {
-	font-family:"u-icon";src:url("https://data.smohan.net/static/css/font/iconfont.eot");src:url("https://data.smohan.net/static/css/font/iconfont.eot?#iefix") format('embedded-opentype'),url("https://data.smohan.net/static/css/font/iconfont.woff") format('woff'),url("https://data.smohan.net/static/css/font/iconfont.ttf") format('truetype'),url("https://data.smohan.net/static/css/font/iconfont.svg#u-icon") format('svg')
+	font-family:"u-icon";src:url("/css/font/iconfont.eot");src:url("/css/font/iconfont.eot?#iefix") format('embedded-opentype'),url("/css/font/iconfont.woff") format('woff'),url("/css/font/iconfont.ttf") format('truetype'),url("/css/font/iconfont.svg#u-icon") format('svg')
 }
 
 .u-icon {
