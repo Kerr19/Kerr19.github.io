@@ -1828,8 +1828,8 @@ h1 {
 
 #navgation .nav-wrapper .logo {
 	display: block;
-	width: 185px;
-	height: 50px;
+	width: 300px;
+	height: 300px;
 	background: url(../img/logo.png) no-repeat;
 	background-size: cover;
 	position: absolute;
