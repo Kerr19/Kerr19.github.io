@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Forza">
 <meta property="og:description" content="5G系统注册功能　　用户需要注册到网络实现以下功能：　　1. 获取网络服务可用授权，　　2. 移动性跟踪，　　3. 可达性探测　　注册场景：　　1. UE执行初始化到5GS，　　2. 移动性注册，　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注">
 <meta property="og:locale" content="CHN">
-<meta property="og:updated_time" content="2019-06-17T13:26:22.705Z">
+<meta property="og:updated_time" content="2019-06-17T13:33:57.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5G注册管理流程总结">
 <meta name="twitter:description" content="5G系统注册功能　　用户需要注册到网络实现以下功能：　　1. 获取网络服务可用授权，　　2. 移动性跟踪，　　3. 可达性探测　　注册场景：　　1. UE执行初始化到5GS，　　2. 移动性注册，　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注">
@@ -269,7 +269,7 @@
       
           
         <h1 id="5G系统注册功能"><a href="#5G系统注册功能" class="headerlink" title="5G系统注册功能"></a>5G系统注册功能</h1><p>　　用户需要注册到网络实现以下功能：<br>　　1. 获取网络服务可用授权，<br>　　2. 移动性跟踪，<br>　　3. 可达性探测<br>　　注册场景：<br>　　1. UE执行初始化到5GS，<br>　　2. 移动性注册，<br>　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。<br>　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注册过程来实现<br>　　<a id="more"></a></p>
-<h1 id="SA注册流程"><a href="#SA注册流程" class="headerlink" title="SA注册流程"></a>SA注册流程</h1><p>　　假设UE处在idle状态。且在网络中注册股过，即old AMF中保留有UE的上下文信息，<br>　　1.  msg1，UE随机选择前导码，每一个前导码都与RA-RNTI(RNTI Radio Network Tempory Identity，无线网络临时标识)相关联，RA-RNTI定义有TS38.321给出；<br>　　2.  UE发佛那个msg1后在PDCCH监听RAI-RNTI；<br>　　3.  UE在PDCCH解码RA-RNTI；<br>　　4.  gNB接收到msg1后分配C-RNTI(小区RNTI)，包含在RAR中；<br>　　5.  使用RA-RNTI加扰DCI消息，包含分配的时频资源信息来发送RAR消息；<br>　　6.  UE成功解码RA-RNTI就会使用消息中包含的RB资源来接收下行方向的传输块；<br>　　7.  UE将在0到2^39-1之间随机选取一个数值作为UE ID用于竞争解决过程中的标识；<br>　　8.  从RAR中得到UL Grant，UL Grant在38.213中定义，包括：Frequnecy hopping flag 1bit,msg3 PUSCH frequency allocation14 bits,msg3 PUSCH time resouce allocation 4bits,MCS 4 bits,TPC command for msg3 PUSCH 3bits,CSI request 1bit;<br>　　9.  启动T300来等待RRC Setup消息<br>　　10. 从gNB得到经过C-RNTI加扰的DCI，包含RRC set偶消息分配时频资源<br>　　11. gNB侧配置SRB1<br>　　12. 冲突解决完成，gNB发送RRC SETUP消息给UE<br>　　13. UE成功接收RRC Setup消息后，停止定时器T300<br>　　14. UE转入RRC_Connected状态<br>　　15. 按照消息RRC Setup中的要求配置Cell group<br>　　16. 按照消息RRC Setup中的要求配置RB<br>　　17. gNB发送使用C-RNTI加扰的DCI0_0为msg5分配时频资源及其他配置<br>　　18. 准备发送MSG5，RRC Setup Complete消息及包含的Register Request<br>　　19. 太多了 不想写了。。。。具体转[<a href="https://mp.weixin.qq.com/s/Puoaawk_p4w8QQHR5VXCPA&#39;开元大叔&#39;" target="_blank" rel="noopener">开元大叔</a>
+<h1 id="SA注册流程"><a href="#SA注册流程" class="headerlink" title="SA注册流程"></a>SA注册流程</h1><p>　　假设UE处在idle状态。且在网络中注册股过，即old AMF中保留有UE的上下文信息，<br>　　1.  msg1，UE随机选择前导码，每一个前导码都与RA-RNTI(RNTI Radio Network Tempory Identity，无线网络临时标识)相关联，RA-RNTI定义有TS38.321给出；<br>　　2.  UE发佛那个msg1后在PDCCH监听RAI-RNTI；<br>　　3.  UE在PDCCH解码RA-RNTI；<br>　　4.  gNB接收到msg1后分配C-RNTI(小区RNTI)，包含在RAR中；<br>　　5.  使用RA-RNTI加扰DCI消息，包含分配的时频资源信息来发送RAR消息；<br>　　6.  UE成功解码RA-RNTI就会使用消息中包含的RB资源来接收下行方向的传输块；<br>　　7.  UE将在0到2^39-1之间随机选取一个数值作为UE ID用于竞争解决过程中的标识；<br>　　8.  从RAR中得到UL Grant，UL Grant在38.213中定义，包括：Frequnecy hopping flag 1bit,msg3 PUSCH frequency allocation14 bits,msg3 PUSCH time resouce allocation 4bits,MCS 4 bits,TPC command for msg3 PUSCH 3bits,CSI request 1bit;<br>　　9.  启动T300来等待RRC Setup消息<br>　　10. 从gNB得到经过C-RNTI加扰的DCI，包含RRC set偶消息分配时频资源<br>　　11. gNB侧配置SRB1<br>　　12. 冲突解决完成，gNB发送RRC SETUP消息给UE<br>　　13. UE成功接收RRC Setup消息后，停止定时器T300<br>　　14. UE转入RRC_Connected状态<br>　　15. 按照消息RRC Setup中的要求配置Cell group<br>　　16. 按照消息RRC Setup中的要求配置RB<br>　　17. gNB发送使用C-RNTI加扰的DCI0_0为msg5分配时频资源及其他配置<br>　　18. 准备发送MSG5，RRC Setup Complete消息及包含的Register Request<br>　　19. 太多了 不想写了。。。。具体转<a href="https://mp.weixin.qq.com/s/Puoaawk_p4w8QQHR5VXCPA" target="_blank" rel="noopener">开元大叔</a>
 　　
 　　</p>
 
@@ -330,7 +330,7 @@
         <p><span>本文标题:</span><a href="/2019/05/08/5G注册管理流程/">5G注册管理流程总结</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Mr.Kerr 的个人博客">Mr.Kerr</a></p>
         <p><span>发布时间:</span>2019年05月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年06月17日 - 21时26分</p>
+        <p><span>最后更新:</span>2019年06月17日 - 21时33分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/05/08/5G注册管理流程/" title="5G注册管理流程总结">http://forzainter.com/2019/05/08/5G注册管理流程/</a>
             <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/05/08/5G注册管理流程/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
