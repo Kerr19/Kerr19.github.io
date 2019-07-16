@@ -3,17 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>First Blog | Forza</title>
+  <title>Python上下文管理器 | Forza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="5G网络与协议">
+  <meta name="description" content="With语句在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。 上下文管理器原理上下文管理器协议，是指要实现对象的 enter() 和 exit() 方法。上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 ent">
+<meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Blog">
-<meta property="og:url" content="http://forzainter.com/2019/05/08/First-Blog/index.html">
+<meta property="og:title" content="Python上下文管理器">
+<meta property="og:url" content="http://forzainter.com/2019/07/16/Python上下文管理器/index.html">
 <meta property="og:site_name" content="Forza">
+<meta property="og:description" content="With语句在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。 上下文管理器原理上下文管理器协议，是指要实现对象的 enter() 和 exit() 方法。上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 ent">
 <meta property="og:locale" content="CHN">
-<meta property="og:updated_time" content="2019-05-14T14:09:13.158Z">
+<meta property="og:updated_time" content="2019-07-16T12:37:25.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Blog">
+<meta name="twitter:title" content="Python上下文管理器">
+<meta name="twitter:description" content="With语句在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。 上下文管理器原理上下文管理器协议，是指要实现对象的 enter() 和 exit() 方法。上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 ent">
   
     <link rel="alternative" href="/atom.xml" title="Forza" type="application/atom+xml">
   
@@ -227,11 +230,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python上下文管理器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/08/First-Blog/" class="article-date">
-      <time datetime="2019-05-08T12:40:50.000Z" itemprop="datePublished">2019-05-08</time>
+      <a href="/2019/07/16/Python上下文管理器/" class="article-date">
+      <time datetime="2019-07-16T11:20:50.000Z" itemprop="datePublished">2019-07-16</time>
 </a>
     </div>
   
@@ -244,7 +247,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      First Blog
+      Python上下文管理器
     </h1>
   
 
@@ -255,7 +258,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/5G网络与协议/">5G网络与协议</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python3/">Python3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -265,7 +268,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="With语句"><a href="#With语句" class="headerlink" title="With语句"></a>With语句</h1><p>在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。</p>
+<h1 id="上下文管理器原理"><a href="#上下文管理器原理" class="headerlink" title="上下文管理器原理"></a>上下文管理器原理</h1><p><strong>上下文管理器协议</strong>，是指要实现对象的 <strong>enter</strong>() 和 <strong>exit</strong>() 方法。<br>上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 <strong>enter</strong>() 和 <strong>exit</strong>() 方法。<br>上下文管理器是一个对象，它定义了在执行 with 语句时要建立的运行时上下文。 上下文管理器处理进入和退出所需运行时上下文以执行代码块。 通常使用 with 语句来使用，但是也可以通过直接调用它们的方法来使用。<br>简单来说，定义一个上下文管理器，需要在一个类里面一个实现<strong>enter</strong>(self)和 <strong>exit</strong>(self, exc_type, exc_value, traceback) 方法。<br>object.<strong>enter</strong>(self)<br>进入与此对象相关的运行时上下文，并返回自身或者另一个与运行食上下文相关的对象。（with语句将会绑定这个方法的返回值到 as 子句中指定的目标）<br>object.<strong>exit</strong>(self, exc_type, exc_value, traceback)<br>退出关联到此对象的运行时上下文。 各个参数描述了导致上下文退出的异常。 如果上下文是无异常地退出的，三个参数都将为None。如果提供了异常，并且希望方法屏蔽此异常（即避免其被传播），则应当返回真值。 否则的话，异常将在退出此方法时按正常流程处理。请注意<strong>exit</strong>()方法不应该重新引发被传入的异常，这是调用者的责任。如果 with_body 的退出由异常引发，并且<strong>exit</strong>()的返回值等于 False，那么这个异常将被重新引发一次；如果 <strong>exit</strong>() 的返回值等于 True，那么这个异常就被无视掉，继续执行后面的代码。</p>
+<p>通常情况下，我们会使用with语句来使用上下文管理器：<br>‘’’<br>with context_expr [as var]:<br>    with_body<br>‘’’</p>
+<ol>
+<li>执行 contextor 以获取上下文管理器</li>
+<li>加载上下文管理器的 exit() 方法以备稍后调用</li>
+<li>调用上下文管理器的 enter() 方法</li>
+<li>如果有 as var 从句，则将 enter() 方法的返回值赋给 var</li>
+<li>执行子代码块 with_body</li>
+<li>调用上下文管理器的 exit() 方法，如果 with_body 的退出是由异常引发的，那么该异常的 type、value 和 traceback 会作为参数传给 exit()，否则传三个 None</li>
+<li>如果 with_body 的退出由异常引发，并且 exit() 的返回值等于 False，那么这个异常将被重新引发一次；如果 exit() 的返回值等于 True，那么这个异常就被无视掉，继续执行后面的代码</li>
+</ol>
+
       
       
         <div class="page-reward">
@@ -320,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/08/First-Blog/">First Blog</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/16/Python上下文管理器/">Python上下文管理器</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Mr.Kerr 的个人博客">Mr.Kerr</a></p>
-        <p><span>发布时间:</span>2019年05月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年05月14日 - 22时09分</p>
+        <p><span>发布时间:</span>2019年07月16日 - 19时20分</p>
+        <p><span>最后更新:</span>2019年07月16日 - 20时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/08/First-Blog/" title="First Blog">http://forzainter.com/2019/05/08/First-Blog/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/05/08/First-Blog/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/16/Python上下文管理器/" title="Python上下文管理器">http://forzainter.com/2019/07/16/Python上下文管理器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/07/16/Python上下文管理器/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -339,18 +354,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/11/markdownyufa/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Markdown 语法总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/08/5G注册管理流程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">5G注册管理流程总结</div>
+    <a href="/2019/05/30/5G CN 架构/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">架构</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -361,7 +367,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#With语句"><span class="toc-number">1.</span> <span class="toc-text">With语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#上下文管理器原理"><span class="toc-number">2.</span> <span class="toc-text">上下文管理器原理</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -427,13 +433,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/11/markdownyufa/" title="上一篇: Markdown 语法总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/08/5G注册管理流程/" title="下一篇: 5G注册管理流程总结">
+            <a href="/2019/05/30/5G CN 架构/" title="下一篇: 架构">
                 <i class="fa fa-angle-right"></i>
             </a>
         
