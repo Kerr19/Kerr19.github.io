@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Forza">
 <meta property="og:description" content="With语句在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。 上下文管理器原理上下文管理器协议，是指要实现对象的 enter() 和 exit() 方法。上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 ent">
 <meta property="og:locale" content="CHN">
-<meta property="og:updated_time" content="2019-07-16T12:44:39.732Z">
+<meta property="og:updated_time" content="2019-07-16T12:47:22.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python上下文管理器">
 <meta name="twitter:description" content="With语句在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。 上下文管理器原理上下文管理器协议，是指要实现对象的 enter() 和 exit() 方法。上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 ent">
@@ -270,7 +270,8 @@
           
         <h1 id="With语句"><a href="#With语句" class="headerlink" title="With语句"></a>With语句</h1><p>在操作资源中，不论成功与否最后一步操作都是关闭调用的资源。如果调用的资源过多而且b没有关闭，程序就会报错。虽然Python提供了close函数，但是没有必要显式调用，在使用with语句后，就会自动执行从close，实现资源释放。</p>
 <h1 id="上下文管理器原理"><a href="#上下文管理器原理" class="headerlink" title="上下文管理器原理"></a>上下文管理器原理</h1><p><strong>上下文管理器协议</strong>，是指要实现对象的 <strong>enter</strong>() 和 <strong>exit</strong>() 方法。<br>上下文管理器也就是支持上下文管理器协议的对象，也就是实现了 <strong>enter</strong>() 和 <strong>exit</strong>() 方法。<br>上下文管理器是一个对象，它定义了在执行 with 语句时要建立的运行时上下文。 上下文管理器处理进入和退出所需运行时上下文以执行代码块。 通常使用 with 语句来使用，但是也可以通过直接调用它们的方法来使用。<br>简单来说，定义一个上下文管理器，需要在一个类里面一个实现<strong>enter</strong>(self)和 <strong>exit</strong>(self, exc_type, exc_value, traceback) 方法。<br>object.<strong>enter</strong>(self)<br>进入与此对象相关的运行时上下文，并返回自身或者另一个与运行食上下文相关的对象。（with语句将会绑定这个方法的返回值到 as 子句中指定的目标）<br>object.<strong>exit</strong>(self, exc_type, exc_value, traceback)<br>退出关联到此对象的运行时上下文。 各个参数描述了导致上下文退出的异常。 如果上下文是无异常地退出的，三个参数都将为None。如果提供了异常，并且希望方法屏蔽此异常（即避免其被传播），则应当返回真值。 否则的话，异常将在退出此方法时按正常流程处理。请注意<strong>exit</strong>()方法不应该重新引发被传入的异常，这是调用者的责任。如果 with_body 的退出由异常引发，并且<strong>exit</strong>()的返回值等于 False，那么这个异常将被重新引发一次；如果 <strong>exit</strong>() 的返回值等于 True，那么这个异常就被无视掉，继续执行后面的代码。</p>
-<p>通常情况下，我们会使用with语句来使用上下文管理器：<br>‘’’<br>with context_expr [as var]:<br>    with_body<br>‘’’<br><a id="more"></a></p>
+<p>通常情况下，我们会使用with语句来使用上下文管理器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with context_expr [as var]:</span><br><span class="line">    with_body</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <ol>
 <li>执行 contextor 以获取上下文管理器</li>
 <li>加载上下文管理器的 exit() 方法以备稍后调用</li>
@@ -338,7 +339,7 @@
         <p><span>本文标题:</span><a href="/2019/07/16/Python上下文管理器/">Python上下文管理器</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Mr.Kerr 的个人博客">Mr.Kerr</a></p>
         <p><span>发布时间:</span>2019年07月16日 - 19时20分</p>
-        <p><span>最后更新:</span>2019年07月16日 - 20时44分</p>
+        <p><span>最后更新:</span>2019年07月16日 - 20时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/07/16/Python上下文管理器/" title="Python上下文管理器">http://forzainter.com/2019/07/16/Python上下文管理器/</a>
             <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/07/16/Python上下文管理器/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -442,7 +443,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/07/16/Python上下文管理器/">Python上下文管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/5G CN 架构/">架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/23/Kmeans/">Kmeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/markdownyufa/">Markdown 语法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/First-Blog/">First Blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/5G注册管理流程/">5G注册管理流程总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/07/16/Python上下文管理器/">Python上下文管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/5G CN 架构/">架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/23/Kmeans/">Kmeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/markdownyufa/">Markdown 语法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/5G注册管理流程/">5G注册管理流程总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/First-Blog/">First Blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
