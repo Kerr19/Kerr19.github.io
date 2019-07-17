@@ -3,17 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Python-Lambda用法 | Forza</title>
+  <title>Python-Lambda,map,filter,zip,reduce用法 | Forza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python">
+  <meta name="description" content="lambda语法规则lambda argument_list: expression，argument_list和expression由用户自定义。  argument_list是参数列表，它的结构与Python中函数(function)的参数列表是一样的。 是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的。特性 lambda函数是匿名的：">
+<meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python-Lambda用法">
+<meta property="og:title" content="Python-Lambda,map,filter,zip,reduce用法">
 <meta property="og:url" content="http://forzainter.com/2019/07/17/Python-Lambda用法/index.html">
 <meta property="og:site_name" content="Forza">
+<meta property="og:description" content="lambda语法规则lambda argument_list: expression，argument_list和expression由用户自定义。  argument_list是参数列表，它的结构与Python中函数(function)的参数列表是一样的。 是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的。特性 lambda函数是匿名的：">
 <meta property="og:locale" content="CHN">
-<meta property="og:updated_time" content="2019-07-17T07:00:40.727Z">
+<meta property="og:updated_time" content="2019-07-17T12:45:33.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python-Lambda用法">
+<meta name="twitter:title" content="Python-Lambda,map,filter,zip,reduce用法">
+<meta name="twitter:description" content="lambda语法规则lambda argument_list: expression，argument_list和expression由用户自定义。  argument_list是参数列表，它的结构与Python中函数(function)的参数列表是一样的。 是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的。特性 lambda函数是匿名的：">
   
     <link rel="alternative" href="/atom.xml" title="Forza" type="application/atom+xml">
   
@@ -149,7 +152,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/5G网络与协议/" style="font-size: 20px;">5G网络与协议</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Python3/" style="font-size: 10px;">Python3</a> <a href="/tags/分类算法-，机器学习/" style="font-size: 10px;">分类算法 ，机器学习</a>
+                        <a href="/tags/5G网络与协议/" style="font-size: 20px;">5G网络与协议</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python3/" style="font-size: 20px;">Python3</a> <a href="/tags/分类算法-，机器学习/" style="font-size: 10px;">分类算法 ，机器学习</a>
                     </div>
                 </section>
                 
@@ -244,7 +247,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python-Lambda用法
+      Python-Lambda,map,filter,zip,reduce用法
     </h1>
   
 
@@ -255,7 +258,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python3/">Python3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -265,7 +268,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><h2 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h2><p>lambda argument_list: expression，argument_list和expression由用户自定义。</p>
+<ol>
+<li>argument_list是参数列表，它的结构与Python中函数(function)的参数列表是一样的。</li>
+<li>是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的。<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2></li>
+<li>lambda函数是匿名的：所谓匿名函数，通俗地说就是没有名字的函数。lambda函数没有名字。</li>
+<li>lambda函数有输入和输出：输入是传入到参数列表argument_list的值，输出是根据表达式expression计算得到的值。</li>
+<li>lambda函数一般功能简单：单行expression决定了lambda函数不可能完成复杂的逻辑，只能完成非常简单的功能。<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2></li>
+<li><p>将lambda函数赋值给一个变量，通过这个变量间接调用该lambda函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add=lambda x, y: x+y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将lambda函数赋值给其他函数，从而将其他函数用该lambda函数替换。</p>
+</li>
+<li><p>将lambda函数作为其他函数的返回值，返回给调用者。<br>例如return lambda x, y: x+y返回一个加法函数</p>
+</li>
+<li>将lambda函数作为参数传递给其他函数。<br>filter函数。此时lambda函数用于指定过滤列表元素的条件。<br>sorted函数。此时lambda函数用于指定对列表中所有元素进行排序的准则。<br>map函数。此时lambda函数用于指定对列表中每一个元素的共同操作。<br>reduce函数。此时lambda函数用于指定列表中两两相邻元素的结合条件。</li>
+</ol>
+
       
       
         <div class="page-reward">
@@ -320,12 +339,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/07/17/Python-Lambda用法/">Python-Lambda用法</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/17/Python-Lambda用法/">Python-Lambda,map,filter,zip,reduce用法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Mr.Kerr 的个人博客">Mr.Kerr</a></p>
         <p><span>发布时间:</span>2019年07月17日 - 14时59分</p>
-        <p><span>最后更新:</span>2019年07月17日 - 15时00分</p>
+        <p><span>最后更新:</span>2019年07月17日 - 20时45分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/07/17/Python-Lambda用法/" title="Python-Lambda用法">http://forzainter.com/2019/07/17/Python-Lambda用法/</a>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/17/Python-Lambda用法/" title="Python-Lambda,map,filter,zip,reduce用法">http://forzainter.com/2019/07/17/Python-Lambda用法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/07/17/Python-Lambda用法/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
@@ -352,7 +371,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#lambda"><span class="toc-number">1.</span> <span class="toc-text">lambda</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法规则"><span class="toc-number">1.1.</span> <span class="toc-text">语法规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-number">1.2.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">1.3.</span> <span class="toc-text">用法</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -427,7 +446,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/Python-Lambda用法/">Python-Lambda用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/16/Python上下文管理器/">Python上下文管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/5G CN 架构/">架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/23/Kmeans/">Kmeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/markdownyufa/">Markdown 语法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/5G注册管理流程/">5G注册管理流程总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/First-Blog/">First Blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/Python-Lambda用法/">Python-Lambda,map,filter,zip,reduce用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/16/Python上下文管理器/">Python上下文管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/5G CN 架构/">架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/23/Kmeans/">Kmeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/markdownyufa/">Markdown 语法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/First-Blog/">First Blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/5G注册管理流程/">5G注册管理流程总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
