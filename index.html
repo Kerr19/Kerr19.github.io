@@ -257,21 +257,38 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><h2 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h2><p>lambda argument_list: expression，argument_list和expression由用户自定义。</p>
+        <h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><h2 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h2><blockquote>
+<p>lambda argument_list: expression，argument_list和expression由用户自定义。</p>
 <ol>
 <li>argument_list是参数列表，它的结构与Python中函数(function)的参数列表是一样的。</li>
-<li>是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的。<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2></li>
+<li>是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的。</li>
+</ol>
+</blockquote>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><blockquote>
+<ol>
 <li>lambda函数是匿名的：所谓匿名函数，通俗地说就是没有名字的函数。lambda函数没有名字。</li>
 <li>lambda函数有输入和输出：输入是传入到参数列表argument_list的值，输出是根据表达式expression计算得到的值。</li>
-<li>lambda函数一般功能简单：单行expression决定了lambda函数不可能完成复杂的逻辑，只能完成非常简单的功能。<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2></li>
-<li><p>将lambda函数赋值给一个变量，通过这个变量间接调用该lambda函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add=lambda x, y: x+y</span><br></pre></td></tr></table></figure>
+<li>lambda函数一般功能简单：单行expression决定了lambda函数不可能完成复杂的逻辑，只能完成非常简单的功能。</li>
+</ol>
+</blockquote>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><blockquote>
+<ol>
+<li>将lambda函数赋值给一个变量，通过这个变量间接调用该lambda函数。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add=lambda x, y: x+y</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+</blockquote>
+<ol start="2">
 <li><p>将lambda函数赋值给其他函数，从而将其他函数用该lambda函数替换。</p>
 </li>
 <li><p>将lambda函数作为其他函数的返回值，返回给调用者。<br>例如return lambda x, y: x+y返回一个加法函数</p>
 </li>
-<li>将lambda函数作为参数传递给其他函数。<br>filter函数。此时lambda函数用于指定过滤列表元素的条件。<br>sorted函数。此时lambda函数用于指定对列表中所有元素进行排序的准则。<br>map函数。此时lambda函数用于指定对列表中每一个元素的共同操作。<br>reduce函数。此时lambda函数用于指定列表中两两相邻元素的结合条件。</li>
+<li>将lambda函数作为参数传递给其他函数。<ul>
+<li>filter函数。此时lambda函数用于指定过滤列表元素的条件。</li>
+<li>sorted函数。此时lambda函数用于指定对列表中所有元素进行排序的准则。</li>
+<li>map函数。此时lambda函数用于指定对列表中每一个元素的共同操作。</li>
+<li>reduce函数。此时lambda函数用于指定列表中两两相邻元素的结合条件。</li>
+</ul>
+</li>
 </ol>
 
       
@@ -544,64 +561,6 @@
 
 
   
-    <article id="post-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/08/First-Blog/" class="article-date">
-      <time datetime="2019-05-08T12:40:50.000Z" itemprop="datePublished">2019-05-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/08/First-Blog/">First Blog</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/5G网络与协议/">5G网络与协议</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-5G注册管理流程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -648,6 +607,64 @@
         <p class="article-more-link">
           <a href="/2019/05/08/5G注册管理流程/#more">Forza >></a>
         </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/08/First-Blog/" class="article-date">
+      <time datetime="2019-05-08T12:40:50.000Z" itemprop="datePublished">2019-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/08/First-Blog/">First Blog</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/5G网络与协议/">5G网络与协议</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
