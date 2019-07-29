@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>5G注册管理流程总结 | Forza</title>
+  <title>Golang入门(1) | Forza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="5G系统注册功能　　用户需要注册到网络实现以下功能：　　1. 获取网络服务可用授权，　　2. 移动性跟踪，　　3. 可达性探测　　注册场景：　　1. UE执行初始化到5GS，　　2. 移动性注册，　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注">
-<meta name="keywords" content="5G网络与协议">
+  <meta name="description" content="数据类型 bool型 只能是true和false 数字类型   int型包括：uint8,uint16,unint32,uint64 ，int8,int16,nint32,int64 ， float型包括：float32，float64，complex32，complex64， 其他类型包括：byte，rune，uintptr，   字符串类型 派生类型包括指针类型，数组类型，结构化类型，chan">
+<meta name="keywords" content="Golang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5G注册管理流程总结">
-<meta property="og:url" content="http://forzainter.com/2019/05/08/5G注册管理流程/index.html">
+<meta property="og:title" content="Golang入门(1)">
+<meta property="og:url" content="http://forzainter.com/2019/07/28/Golang入门（1）/index.html">
 <meta property="og:site_name" content="Forza">
-<meta property="og:description" content="5G系统注册功能　　用户需要注册到网络实现以下功能：　　1. 获取网络服务可用授权，　　2. 移动性跟踪，　　3. 可达性探测　　注册场景：　　1. UE执行初始化到5GS，　　2. 移动性注册，　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注">
+<meta property="og:description" content="数据类型 bool型 只能是true和false 数字类型   int型包括：uint8,uint16,unint32,uint64 ，int8,int16,nint32,int64 ， float型包括：float32，float64，complex32，complex64， 其他类型包括：byte，rune，uintptr，   字符串类型 派生类型包括指针类型，数组类型，结构化类型，chan">
 <meta property="og:locale" content="CHN">
-<meta property="og:updated_time" content="2019-06-17T13:33:57.592Z">
+<meta property="og:updated_time" content="2019-07-29T08:58:13.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5G注册管理流程总结">
-<meta name="twitter:description" content="5G系统注册功能　　用户需要注册到网络实现以下功能：　　1. 获取网络服务可用授权，　　2. 移动性跟踪，　　3. 可达性探测　　注册场景：　　1. UE执行初始化到5GS，　　2. 移动性注册，　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注">
+<meta name="twitter:title" content="Golang入门(1)">
+<meta name="twitter:description" content="数据类型 bool型 只能是true和false 数字类型   int型包括：uint8,uint16,unint32,uint64 ，int8,int16,nint32,int64 ， float型包括：float32，float64，complex32，complex64， 其他类型包括：byte，rune，uintptr，   字符串类型 派生类型包括指针类型，数组类型，结构化类型，chan">
   
     <link rel="alternative" href="/atom.xml" title="Forza" type="application/atom+xml">
   
@@ -230,11 +230,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-5G注册管理流程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Golang入门（1）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/08/5G注册管理流程/" class="article-date">
-      <time datetime="2019-05-08T12:40:50.000Z" itemprop="datePublished">2019-05-08</time>
+      <a href="/2019/07/28/Golang入门（1）/" class="article-date">
+      <time datetime="2019-07-28T02:53:00.000Z" itemprop="datePublished">2019-07-28</time>
 </a>
     </div>
   
@@ -247,7 +247,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      5G注册管理流程总结
+      Golang入门(1)
     </h1>
   
 
@@ -258,7 +258,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/5G网络与协议/">5G网络与协议</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/">Golang</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -268,10 +268,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="5G系统注册功能"><a href="#5G系统注册功能" class="headerlink" title="5G系统注册功能"></a>5G系统注册功能</h1><p>　　用户需要注册到网络实现以下功能：<br>　　1. 获取网络服务可用授权，<br>　　2. 移动性跟踪，<br>　　3. 可达性探测<br>　　注册场景：<br>　　1. UE执行初始化到5GS，<br>　　2. 移动性注册，<br>　　UE进入新的跟踪区域TA，处于CM_CONNECTED 和 CM_IDLE模式的UE都要执行移动性注册。<br>　　3. 执行周期性注册，当UE需要更新能力以及通过注册过程和网络协商协议参数这些功能也会通过注册过程来实现<br>　　<a id="more"></a></p>
-<h1 id="SA注册流程"><a href="#SA注册流程" class="headerlink" title="SA注册流程"></a>SA注册流程</h1><p>　　假设UE处在idle状态。且在网络中注册股过，即old AMF中保留有UE的上下文信息，<br>　　1.  msg1，UE随机选择前导码，每一个前导码都与RA-RNTI(RNTI Radio Network Tempory Identity，无线网络临时标识)相关联，RA-RNTI定义有TS38.321给出；<br>　　2.  UE发佛那个msg1后在PDCCH监听RAI-RNTI；<br>　　3.  UE在PDCCH解码RA-RNTI；<br>　　4.  gNB接收到msg1后分配C-RNTI(小区RNTI)，包含在RAR中；<br>　　5.  使用RA-RNTI加扰DCI消息，包含分配的时频资源信息来发送RAR消息；<br>　　6.  UE成功解码RA-RNTI就会使用消息中包含的RB资源来接收下行方向的传输块；<br>　　7.  UE将在0到2^39-1之间随机选取一个数值作为UE ID用于竞争解决过程中的标识；<br>　　8.  从RAR中得到UL Grant，UL Grant在38.213中定义，包括：Frequnecy hopping flag 1bit,msg3 PUSCH frequency allocation14 bits,msg3 PUSCH time resouce allocation 4bits,MCS 4 bits,TPC command for msg3 PUSCH 3bits,CSI request 1bit;<br>　　9.  启动T300来等待RRC Setup消息<br>　　10. 从gNB得到经过C-RNTI加扰的DCI，包含RRC set偶消息分配时频资源<br>　　11. gNB侧配置SRB1<br>　　12. 冲突解决完成，gNB发送RRC SETUP消息给UE<br>　　13. UE成功接收RRC Setup消息后，停止定时器T300<br>　　14. UE转入RRC_Connected状态<br>　　15. 按照消息RRC Setup中的要求配置Cell group<br>　　16. 按照消息RRC Setup中的要求配置RB<br>　　17. gNB发送使用C-RNTI加扰的DCI0_0为msg5分配时频资源及其他配置<br>　　18. 准备发送MSG5，RRC Setup Complete消息及包含的Register Request<br>　　19. 太多了 不想写了。。。。具体转<a href="https://mp.weixin.qq.com/s/Puoaawk_p4w8QQHR5VXCPA" target="_blank" rel="noopener">开元大叔</a>
-　　
-　　</p>
+        <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ol>
+<li>bool型 只能是true和false</li>
+<li>数字类型</li>
+</ol>
+<ul>
+<li>int型包括：uint8,uint16,unint32,uint64 ，int8,int16,nint32,int64 ，</li>
+<li>float型包括：float32，float64，complex32，complex64，</li>
+<li>其他类型包括：byte，rune，uintptr，</li>
+</ul>
+<ol start="3">
+<li>字符串类型</li>
+<li>派生类型<br>包括指针类型，数组类型，结构化类型，channele类型，函数类型，切片类型，接口类型，Map类型。</li>
+</ol>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>变量名由字母数字下划线组成，首字符不能为数字，变量声明使用var关键字。<br>三种形式包括，</p>
+<ul>
+<li><code>var v_name v_type</code><br> <code>v_name = value</code></li>
+<li><code>var v_name = value</code></li>
+<li><code>v_name := value</code></li>
+</ul>
+<h2 id="多变量声明"><a href="#多变量声明" class="headerlink" title="多变量声明"></a>多变量声明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var vname1, vname2, vname3 type</span><br><span class="line">vname1, vname2, vname3 = v1, v2, v3</span><br><span class="line">var vname1, vname2, vname3 = v1, v2, v3 // 和 python 很像,不需要显示声明类型，自动推断</span><br><span class="line">vname1, vname2, vname3 := v1, v2, v3 // 出现在 := 左侧的变量不应该是已经被声明过的，否则会导致编译错误</span><br><span class="line">var (</span><br><span class="line">vname1 v_type1</span><br><span class="line">vname2 v_type2</span><br><span class="line">)//多用于全局变量声明</span><br></pre></td></tr></table></figure>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>变量声明之后必须使用y，否则编译出错，全局变量除外。</p>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>常量的定义格式<code>const identifier [type] = value</code></p>
 
       
       
@@ -327,13 +345,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/08/5G注册管理流程/">5G注册管理流程总结</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/28/Golang入门（1）/">Golang入门(1)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Mr.Kerr 的个人博客">Mr.Kerr</a></p>
-        <p><span>发布时间:</span>2019年05月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年06月17日 - 21时33分</p>
+        <p><span>发布时间:</span>2019年07月28日 - 10时53分</p>
+        <p><span>最后更新:</span>2019年07月29日 - 16时58分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/08/5G注册管理流程/" title="5G注册管理流程总结">http://forzainter.com/2019/05/08/5G注册管理流程/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/05/08/5G注册管理流程/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/28/Golang入门（1）/" title="Golang入门(1)">http://forzainter.com/2019/07/28/Golang入门（1）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://forzainter.com/2019/07/28/Golang入门（1）/　　作者: Mr.Kerr" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -346,18 +364,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/11/markdownyufa/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Markdown 语法总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/08/First-Blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">First Blog</div>
+    <a href="/2019/07/17/Python-Lambda用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python-Lambda,map,filter,zip,reduce用法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -368,7 +377,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5G系统注册功能"><span class="toc-number">1.</span> <span class="toc-text">5G系统注册功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SA注册流程"><span class="toc-number">2.</span> <span class="toc-text">SA注册流程</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据类型"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量"><span class="toc-number">2.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多变量声明"><span class="toc-number">2.1.</span> <span class="toc-text">多变量声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-number">2.2.</span> <span class="toc-text">Note</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常量"><span class="toc-number">3.</span> <span class="toc-text">常量</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -434,13 +443,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/11/markdownyufa/" title="上一篇: Markdown 语法总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/08/First-Blog/" title="下一篇: First Blog">
+            <a href="/2019/07/17/Python-Lambda用法/" title="下一篇: Python-Lambda,map,filter,zip,reduce用法">
                 <i class="fa fa-angle-right"></i>
             </a>
         

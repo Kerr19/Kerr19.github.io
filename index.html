@@ -150,7 +150,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/5G网络与协议/" style="font-size: 20px;">5G网络与协议</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python3/" style="font-size: 20px;">Python3</a> <a href="/tags/分类算法-，机器学习/" style="font-size: 10px;">分类算法 ，机器学习</a>
+                        <a href="/tags/5G网络与协议/" style="font-size: 20px;">5G网络与协议</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python3/" style="font-size: 20px;">Python3</a> <a href="/tags/分类算法-，机器学习/" style="font-size: 10px;">分类算法 ，机器学习</a>
                     </div>
                 </section>
                 
@@ -229,6 +229,86 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Golang入门（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/28/Golang入门（1）/" class="article-date">
+      <time datetime="2019-07-28T02:53:00.000Z" itemprop="datePublished">2019-07-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/28/Golang入门（1）/">Golang入门(1)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ol>
+<li>bool型 只能是true和false</li>
+<li>数字类型</li>
+</ol>
+<ul>
+<li>int型包括：uint8,uint16,unint32,uint64 ，int8,int16,nint32,int64 ，</li>
+<li>float型包括：float32，float64，complex32，complex64，</li>
+<li>其他类型包括：byte，rune，uintptr，</li>
+</ul>
+<ol start="3">
+<li>字符串类型</li>
+<li>派生类型<br>包括指针类型，数组类型，结构化类型，channele类型，函数类型，切片类型，接口类型，Map类型。</li>
+</ol>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>变量名由字母数字下划线组成，首字符不能为数字，变量声明使用var关键字。<br>三种形式包括，</p>
+<ul>
+<li><code>var v_name v_type</code><br> <code>v_name = value</code></li>
+<li><code>var v_name = value</code></li>
+<li><code>v_name := value</code></li>
+</ul>
+<h2 id="多变量声明"><a href="#多变量声明" class="headerlink" title="多变量声明"></a>多变量声明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var vname1, vname2, vname3 type</span><br><span class="line">vname1, vname2, vname3 = v1, v2, v3</span><br><span class="line">var vname1, vname2, vname3 = v1, v2, v3 // 和 python 很像,不需要显示声明类型，自动推断</span><br><span class="line">vname1, vname2, vname3 := v1, v2, v3 // 出现在 := 左侧的变量不应该是已经被声明过的，否则会导致编译错误</span><br><span class="line">var (</span><br><span class="line">vname1 v_type1</span><br><span class="line">vname2 v_type2</span><br><span class="line">)//多用于全局变量声明</span><br></pre></td></tr></table></figure>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>变量声明之后必须使用y，否则编译出错，全局变量除外。</p>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>常量的定义格式<code>const identifier [type] = value</code></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/">Golang</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Python-Lambda用法" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -535,64 +615,6 @@
 
 
   
-    <article id="post-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/08/First-Blog/" class="article-date">
-      <time datetime="2019-05-08T12:40:50.000Z" itemprop="datePublished">2019-05-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/08/First-Blog/">First Blog</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/5G网络与协议/">5G网络与协议</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-5G注册管理流程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -639,6 +661,64 @@
         <p class="article-more-link">
           <a href="/2019/05/08/5G注册管理流程/#more">Forza >></a>
         </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/08/First-Blog/" class="article-date">
+      <time datetime="2019-05-08T12:40:50.000Z" itemprop="datePublished">2019-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/08/First-Blog/">First Blog</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/5G网络与协议/">5G网络与协议</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
